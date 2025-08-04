@@ -1,0 +1,12 @@
+{
+  "weights": {
+    "performanceScore": 0.35,
+    "seniorityMonths": 0.15,
+    "targetAchievedPercent": 0.4,
+    "activeClients": 0.1
+  },
+  "justificationThresholds": {
+    "high": 0.8,
+    "medium": 0.6
+  }
+}
