@@ -1,5 +1,5 @@
 /*
-Step 3: Implement the Normalization Logic
+Implement the Normalization Logic
 The Goal: The attributes for each agent—performanceScore (0-100), seniorityMonths, and activeClients—are all on different scales. To compare them fairly, we must bring them to a common scale (a process called normalization). We'll convert each value into a score between 0 and 1, where 1 represents the highest value for that attribute across all agents in the list.
 */
 

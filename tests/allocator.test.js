@@ -1,11 +1,8 @@
-// tests/allocator.test.js
 
 import { allocateDiscount } from '../src/allocator.js';
 
-// The fix is here: we now use 'with' instead of 'assert'
 import config from '../config.json' with { type: 'json' };
 
-// And here for the other JSON imports
 import normalInput from '../samples/input_normal.json' with { type: 'json' };
 import allSameInput from '../samples/input_allsame.json' with { type: 'json' };
 import roundingInput from '../samples/input_rounding.json' with { type: 'json' };
@@ -56,8 +53,6 @@ describe('Discount Allocation Engine', () => {
     const result = allocateDiscount(siteKitty, salesAgents, config);
 
     it('should allocate the entire kitty exactly, leaving no remainder', () => {
-      // This is the most important test for this case. It proves our remainder
-      // distribution logic works correctly.
       expect(result.totalAllocated).toBe(siteKitty);
       expect(result.remainingKitty).toBe(0);
     });
@@ -65,7 +60,7 @@ describe('Discount Allocation Engine', () => {
 
   // Test Suite 4: Base + Bonus Logic
   describe('when using the Base + Bonus model', () => {
-    const { siteKitty, salesAgents } = normalInput; // Use the normal input
+    const { siteKitty, salesAgents } = normalInput; 
     const result = allocateDiscount(siteKitty, salesAgents, config);
     const allocations = result.allocations;
 

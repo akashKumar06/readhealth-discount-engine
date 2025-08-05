@@ -12,7 +12,7 @@ const main = () => {
     process.exit(1); // Exit the program with an error code
   }
 
-  // 3. Load and parse the input data file inside a try...catch block for error handling.
+  // 3. Load and parse the input data file
   let inputData;
   try {
     // path.resolve ensures we have an absolute path to the file
