@@ -1,4 +1,5 @@
 {
+  "baseBonusSplit": 0.4,
   "weights": {
     "performanceScore": 0.35,
     "seniorityMonths": 0.15,

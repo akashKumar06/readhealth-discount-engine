@@ -1,0 +1,19 @@
+{
+  "siteKitty": 10001,
+  "salesAgents": [
+    {
+      "id": "A1",
+      "performanceScore": 100,
+      "seniorityMonths": 10,
+      "targetAchievedPercent": 100,
+      "activeClients": 10
+    },
+    {
+      "id": "A2",
+      "performanceScore": 50,
+      "seniorityMonths": 5,
+      "targetAchievedPercent": 50,
+      "activeClients": 5
+    }
+  ]
+}
