@@ -25,39 +25,39 @@ This section provides a detailed breakdown of how the chosen model handles all s
 
 This model was chosen over simpler alternatives (like a purely proportional model or a tier-based system) because it provides the most balanced and fair solution for every question posed in the assignment brief:
 
-- **● Performance might signal reliability. Should a top performer get more?**
+- ** Performance might signal reliability. Should a top performer get more?**
 
   - **Yes.** The "Bonus Pool" is distributed proportionally based on performance scores. This directly and significantly rewards top performers.
 
-- **● Seniority could represent loyalty. Should long-timers receive extra credit?**
+- ** Seniority could represent loyalty. Should long-timers receive extra credit?**
 
   - **Yes.** `seniorityMonths` is a key factor in the weighted score calculation for the bonus pool. By assigning it a weight in `config.json`, the model explicitly gives "extra credit" to loyal, long-time agents.
 
-- **● Target achievement is a direct link to sales effectiveness. How do you reward this?**
+- ** Target achievement is a direct link to sales effectiveness. How do you reward this?**
 
   - **Yes.** This is a core strength. The model uses `targetAchievedPercent` as a heavily weighted component of the bonus calculation, creating a direct and powerful financial reward for effective sales agents.
 
-- **● Active clients indicate current workload. Should higher responsibility earn more?**
+- ** Active clients indicate current workload. Should higher responsibility earn more?**
 
   - **Yes.** The number of `activeClients` contributes to the weighted score. Therefore, agents managing a higher workload receive a larger portion of the bonus pool, directly rewarding their higher responsibility.
 
-- **● These parameters vary in range and meaning. How do you bring them to a common scale?**
+- ** These parameters vary in range and meaning. How do you bring them to a common scale?**
 
   - **Through Normalization.** The "Bonus" calculation is built on a normalization function that converts every attribute to a common 0-1 scale before applying weights, ensuring fair comparisons.
 
-- **● You can design logic to assign base amounts first, then add variable bonuses.**
+- ** You can design logic to assign base amounts first, then add variable bonuses.**
 
   - **This is the exact implementation.** Our model is the literal fulfillment of this design suggestion, splitting the kitty into a "Base Pool" (for the base amount) and a "Bonus Pool" (for the variable bonus).
 
-- **● Consider adding minimum and maximum thresholds per agent.**
+- ** Consider adding minimum and maximum thresholds per agent.**
 
   - **The model provides a natural minimum.** The "Base Pool" guarantees a fair, non-zero minimum for every agent, ensuring team-wide inclusion. Strict min/max thresholds can also be easily applied as a final step on top of this logic.
 
-- **● What happens if all agents are exactly the same on all fields?**
+- ** What happens if all agents are exactly the same on all fields?**
 
   - **It behaves perfectly.** If all agents are identical, the Base Pool is split equally, and their weighted scores for the Bonus Pool are also identical, meaning the Bonus Pool is _also_ split equally. The final result is that every agent receives the exact same amount, which is the ideal and fair outcome.
 
-- **● Avoid hardcoding logic where possible — your system should be future-proof and tunable.**
+- ** Avoid hardcoding logic where possible — your system should be future-proof and tunable.**
   - **The system is highly tunable.** The split between the Base and Bonus pools and the weights for every performance metric are all defined in `config.json`, allowing a manager to easily adjust priorities without touching a single line of code.
 
 ### Edge Cases Handled
