@@ -33,7 +33,7 @@ This model was chosen over simpler alternatives (like a purely proportional mode
 
   - **Yes.** `seniorityMonths` is a key factor in the weighted score calculation for the bonus pool. By assigning it a weight in `config.json`, the model explicitly gives "extra credit" to loyal, long-time agents.
 
-- Target achievement is a direct link to sales effectiveness. How do you reward this?
+- **Target achievement is a direct link to sales effectiveness. How do you reward this?**
 
   - **Yes.** This is a core strength. The model uses `targetAchievedPercent` as a heavily weighted component of the bonus calculation, creating a direct and powerful financial reward for effective sales agents.
 
